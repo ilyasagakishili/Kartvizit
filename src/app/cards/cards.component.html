@@ -1,0 +1,27 @@
+<main>
+  <div class="d-flex align-content-center">
+    <div class="flex-grow-1">
+      <h1 class="page-title">Kartvizitlər</h1>
+      <p class="page-description">
+        Bu ekranda kartvizitlərinizi idarə edə bilərsiniz.
+      </p>
+    </div>
+    <div>
+      <button mat-flat-button color="primary" (click)="openAddCardModal()">Yeni Kartvizit</button>
+    </div>
+  </div>
+  <hr>
+  <div class="cards">
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center" *ngIf="!cardService.cards">
+        <mat-spinner></mat-spinner>
+      </div>
+      <div class="col-12" *ngIf="cardService.cards?.length === 0">
+        <span>Kartvizit əlavə olunmayıb. <a class="text-primary" (click)="openAddCardModal()">Buraya click edərək</a> ilk kartvizitinizi əlavə edə bilərsiniz.</span>
+      </div>
+      <div class="col-12 col-md-4 col-lg-3" *ngFor="let card of cardService.cards">
+        <app-card-item [card]="card"></app-card-item>
+      </div>
+    </div>
+  </div>
+</main>

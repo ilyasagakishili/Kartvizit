@@ -32,7 +32,7 @@
     <button mat-stroked-button color="warn" (click)="deleteCard()" [disabled]="showSpinner" *ngIf="data">Sil</button>
   </div>
   <div>
-    <button mat-button mat-dialog-close>Ləğv et</button>
+    <button mat-button mat-dialog-close>Ləğv et </button>
     <button mat-flat-button color="primary"
             (click)="data ? updateCard() : addCard()"
             [disabled]="cardForm.invalid || showSpinner">{{data ? 'Yenilə' : 'Əlavə et'}}</button>
